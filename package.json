@@ -1,0 +1,19 @@
+{
+  "name": "guro-backend",
+  "version": "0.0.1",
+  "description": "A simple guro web application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obetdelacruz/guro-backend.git"
+  },
+  "author": "Angelo Lim, Benjie Angeles, Obet Dela Cruz, Leslie Riola",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/obetdelacruz/guro-backend/issues"
+  },
+  "homepage": "https://github.com/obetdelacruz/guro-backend#readme"
+}
