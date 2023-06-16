@@ -60,4 +60,7 @@ const gradeInfo = new Grade({
 });
 
 // Save the grade database
-gradeInfo.save();
+gradeInfo.save().then((result) => {
+  console.log("Grade saved");
+  mongoose.connection.close();
+});

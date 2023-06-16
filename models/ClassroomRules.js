@@ -19,4 +19,7 @@ const classroomRulesInfo = new ClassroomRules({
 });
 
 // Save the classroom rules database
-classroomRulesInfo.save();
+classroomRulesInfo.save().then((result) => {
+  console.log("Classroom Rules Saved");
+  mongoose.connection.close();
+});

@@ -27,4 +27,7 @@ const newsInfo = new News({
 });
 
 // Save the news database
-newsInfo.save();
+newsInfo.save().then((result) => {
+  console.log("News saved");
+  mongoose.connection.close();
+});
