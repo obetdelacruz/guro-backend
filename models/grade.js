@@ -1,4 +1,17 @@
 import mongoose from "mongoose";
+const MONGODB_URI =
+  "mongodb+srv://ldelacruz:SYa3AjHGkTNqIXwp@cluster0.ykgpqoq.mongodb.net/?retryWrites=true&w=majority";
+
+async function connectToDB(url) {
+  try {
+    await mongoose.connect(url);
+    console.log("Connected to DB");
+  } catch (error) {
+    console.log(`Error connecting to DB${error}`);
+  }
+}
+
+connectToDB(MONGODB_URI);
 
 // Schema for grades
 const gradeSchema = new mongoose.Schema({
@@ -34,7 +47,7 @@ const Grade = mongoose.model("Grade", gradeSchema);
 // Create a grade database
 const gradeInfo = new Grade({
   student_name: {
-    first_name: "Jose",
+    first_name: "Obet",
     middle_name: "Dakila",
     last_name: "Luna",
   },
