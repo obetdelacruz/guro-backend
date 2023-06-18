@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const MONGODB_URI =
-  "mongodb+srv://ldelacruz:SYa3AjHGkTNqIXwp@cluster0.ykgpqoq.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://ldelacruz:uT268TDpv9kjxfzY@cluster0.ykgpqoq.mongodb.net/?retryWrites=true&w=majority";
 
 async function connectToDB(url) {
   try {
