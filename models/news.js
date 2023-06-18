@@ -1,18 +1,3 @@
-const mongoose = require("mongoose");
-const MONGODB_URI =
-  "mongodb+srv://obetdelacruz:v3wUGDIxpT8Kk2VD@cluster0.llbpnx1.mongodb.net/?retryWrites=true&w=majority";
-
-async function connectToDB(url) {
-  try {
-    await mongoose.connect(url);
-    console.log("Connected to DB");
-  } catch (error) {
-    console.log(`Error connecting to DB${error}`);
-  }
-}
-
-connectToDB(url);
-
 import mongoose from "mongoose";
 
 // Schema for news
