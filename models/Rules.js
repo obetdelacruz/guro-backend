@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 // Schema for classroom rules
-const classroomRulesSchema = new mongoose.Schema({
+const RulesSchema = new mongoose.Schema({
   rules: {
     type: String,
     required: true,
@@ -9,17 +9,15 @@ const classroomRulesSchema = new mongoose.Schema({
 });
 
 // Model for classroom rules
-
-const ClassroomRules = mongoose.model("ClassroomRules", classroomRulesSchema);
+const Rules = mongoose.model("Rules", RulesSchema);
 
 // Create a classroom rules database
-
-const classroomRulesInfo = new ClassroomRules({
+const RulesInfo = new Rules({
   rules: "Test",
 });
 
 // Save the classroom rules database
-classroomRulesInfo.save().then((result) => {
+RulesInfo.save().then((result) => {
   console.log("Classroom Rules Saved");
   mongoose.connection.close();
 });
