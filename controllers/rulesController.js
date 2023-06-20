@@ -1,3 +1,5 @@
+import Rules from "../models/Rules.js";
+
 async function getRules(req, res) {
   res.send("Rules resource");
 }

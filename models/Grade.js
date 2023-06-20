@@ -11,8 +11,6 @@ async function connectToDB(url) {
   }
 }
 
-connectToDB(MONGODB_URI);
-
 // Schema for grades
 const gradeSchema = new mongoose.Schema({
   student_name: {
@@ -77,3 +75,5 @@ gradeInfo.save().then((result) => {
   console.log("Grade saved");
   mongoose.connection.close();
 });
+
+export default Grade;

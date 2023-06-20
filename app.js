@@ -8,11 +8,16 @@ import newsRouter from "./routes/newsRouter.js";
 import rulesRouter from "./routes/rulesRouter.js";
 
 const app = express();
+const MONGODB_URI =
+  "mongodb+srv://ldelacruz:uT268TDpv9kjxfzY@cluster0.ykgpqoq.mongodb.net/?retryWrites=true&w=majority";
 
-//function to connect to the database
 async function connectToDB(url) {
-  await mongoose.connect(url);
-  console.log("Connected to DataBase");
+  try {
+    await mongoose.connect(url);
+    console.log("Connected to DB");
+  } catch (error) {
+    console.log(`Error connecting to DB${error}`);
+  }
 }
 
 connectToDB(config.MONGODB_URI);
