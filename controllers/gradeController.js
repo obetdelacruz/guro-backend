@@ -1,5 +1,10 @@
-async function getGrades(req, res) {
-  res.send("Grades resource");
+import Grade from "../models/Grade.js";
+
+//HTPP GET all Grades
+
+async function getGrades(_req, res) {
+  const grades = await Grade.find({});
+  return res.json(grades);
 }
 
 async function getGradeById(req, res) {

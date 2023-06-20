@@ -31,3 +31,5 @@ newsInfo.save().then((result) => {
   console.log("News saved");
   mongoose.connection.close();
 });
+
+export default News;

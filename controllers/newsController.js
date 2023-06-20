@@ -1,3 +1,5 @@
+import News from "../models/News.js";
+
 async function getNews(req, res) {
   res.send("News resource");
 }
