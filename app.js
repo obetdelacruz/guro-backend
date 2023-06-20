@@ -9,7 +9,7 @@ import rulesRouter from "./routes/rulesRouter.js";
 
 const app = express();
 const MONGODB_URI =
-  "mongodb+srv://ldelacruz:uT268TDpv9kjxfzY@cluster0.ykgpqoq.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://ldelacruz:b7sK9bwvUgaq5eNx@cluster0.ykgpqoq.mongodb.net/?retryWrites=true&w=majority";
 
 async function connectToDB(url) {
   try {

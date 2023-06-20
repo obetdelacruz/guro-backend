@@ -1,15 +1,4 @@
 import mongoose from "mongoose";
-const MONGODB_URI =
-  "mongodb+srv://ldelacruz:uT268TDpv9kjxfzY@cluster0.ykgpqoq.mongodb.net/?retryWrites=true&w=majority";
-
-async function connectToDB(url) {
-  try {
-    await mongoose.connect(url);
-    console.log("Connected to DB");
-  } catch (error) {
-    console.log(`Error connecting to DB${error}`);
-  }
-}
 
 // Schema for grades
 const gradeSchema = new mongoose.Schema({
@@ -36,6 +25,14 @@ const gradeSchema = new mongoose.Schema({
     },
     GMRC: Number,
     general_average: Number,
+  },
+});
+
+gradeSchema.set("toJSON", {
+  transform: (_document, returnedObject) => {
+    returnedObject.id = returnedObject._id.toString();
+    delete returnedObject._id;
+    delete returnedObject.__v;
   },
 });
 
