@@ -6,8 +6,11 @@ import loginRouter from "./routes/loginRouter.js";
 import gradeRouter from "./routes/gradeRouter.js";
 import newsRouter from "./routes/newsRouter.js";
 import rulesRouter from "./routes/rulesRouter.js";
+import errorHandler from "./middlewares/errorHandler.js";
+import unknownEndpoint from "./middlewares/unknownEndpoint.js";
 
 const app = express();
+
 const MONGODB_URI =
   "mongodb+srv://ldelacruz:b7sK9bwvUgaq5eNx@cluster0.ykgpqoq.mongodb.net/?retryWrites=true&w=majority";
 
@@ -30,5 +33,7 @@ app.use("/api/login", loginRouter);
 app.use("/api/grades", gradeRouter);
 app.use("/api/news", newsRouter);
 app.use("/api/rules", rulesRouter);
+app.use(unknownEndpoint);
+app.use(errorHandler);
 
 export default app;
