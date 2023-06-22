@@ -11,9 +11,6 @@ import unknownEndpoint from "./middlewares/unknownEndpoint.js";
 
 const app = express();
 
-const MONGODB_URI =
-  "mongodb+srv://ldelacruz:b7sK9bwvUgaq5eNx@cluster0.ykgpqoq.mongodb.net/?retryWrites=true&w=majority";
-
 async function connectToDB(url) {
   try {
     await mongoose.connect(url);
