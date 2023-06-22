@@ -57,13 +57,57 @@ async function createGrade(req, res) {
 }
 
 //HTTP UPDATE GRADE
-async function updateGrade(_req, res) {
-  res.send("Grades has been updated");
+async function updateGrade(req, res) {
+  try {
+    const gradeId = req.params.id;
+    const {
+      full_name,
+      mother_tongue,
+      filipino,
+      english,
+      math,
+      araling_panlipunan,
+      GMRC,
+      general_average,
+      mapeh,
+    } = req.body;
+
+    const updatedGrade = await Grade.findByIdAndUpdate(
+      gradeId,
+      {
+        full_name,
+        mother_tongue,
+        filipino,
+        english,
+        math,
+        araling_panlipunan,
+        GMRC,
+        general_average,
+        mapeh,
+      },
+      { new: true }
+    );
+
+    if (!updatedGrade) {
+      return res.status(404).json({ error: "Grade not found" });
+    }
+
+    res.status(200).json(updatedGrade);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Failed to update grade" });
+  }
 }
 
 //HTTP DELETE GRADE
-async function deleteGrade(_req, res) {
-  res.send("Grades has been deleted");
+async function deleteGrade(req, res) {
+  try {
+    const gradeId = req.params.id;
+    await Grade.findByIdAndDelete(gradeId);
+    res.status(204).send();
+  } catch (error) {
+    console.error(500).json({ error: "Failed to delete grade" });
+  }
 }
 
 export default {

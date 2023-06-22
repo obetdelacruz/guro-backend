@@ -2,18 +2,10 @@ import mongoose from "mongoose";
 
 // Schema for news
 const newsSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  date: {
-    type: Date,
-    required: true,
-  },
+  title: String,
+  description: String,
+  author: String,
+  date: Number,
 });
 
 newsSchema.set("toJSON", {
@@ -26,18 +18,5 @@ newsSchema.set("toJSON", {
 
 // Model for news
 const News = mongoose.model("News", newsSchema);
-
-// Create a news database
-const newsInfo = new News({
-  title: "Test",
-  description: "Test",
-  date: new Date(),
-});
-
-// Save the news database
-newsInfo.save().then((result) => {
-  console.log("News saved");
-  mongoose.connection.close();
-});
 
 export default News;
